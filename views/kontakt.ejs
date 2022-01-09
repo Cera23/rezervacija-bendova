@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script src="https://kit.fontawesome.com/3705fa8c3f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <title>Kontakt</title>
+</head>
+<body>
+    <header class="header">
+        <div class="conatiner">
+            <nav class="nav"> 
+            <a  href="/" class="logo">
+                <img src="images/band.png">
+            </a>
+            <div class="nav-menu">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                <a href="/" class="nav-link">Početna</a>
+                </li>
+                <li class="nav-item">
+                <a href="/pretraga" class="nav-link">Bendovi</a>
+                </li>
+                <li class="nav-item">
+                <a href="/prijava" class="nav-link">Prijava</a>
+                </li>
+                <li class="nav-item">
+                <a href="/kontakt" class="nav-link">Kontakt</a>
+                </li>
+             </ul>
+            </nav>  
+        </div>
+    </header>
+    <section class="contact">
+        <div class="container1">
+            <h5 class="section-head">
+            <span class="heading">Kontakt</span>
+            <span class="sub-heading">Pisite nam</span>
+            </h5>
+            <div class="col-md-12">
+            <div class="div1">
+            <div class="ikonice"> 
+                <div class="col-md-3">
+                <div class="dbox">
+                    <div class="icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="adress-text">
+                        <p>
+                        <span>Adresa:</span>
+                        Aleksandra Medvedeva 20, 18000 Niš, Srbija
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                <div class="dbox">
+                    <div class="icon">
+                    <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="telefon-text">
+                        <p>
+                    <span>Telefon:</span>
+                    <a href="tel://1234567920">+1235 2355 98</a>
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                 <div class="dbox">
+                    <div class="icon">
+                    <i class="fas fa-paper-plane"></i>
+                    </div>
+                     <div class="text-email">
+                         <p>
+                        <span>Email:</span>
+                         <a href="mailto:info@yoursite.com">rezervacija@gmail.com</a>
+                        </p>
+                     </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                <div class="dbox">
+                    <div class="icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="website-text">
+                        <p>
+                            <a href="/">Rezervacija bendova</a>
+                        </p>
+                    </div>
+                    </div>
+                </div>
+              </div>
+           </div>
+            <div class="div2">
+            <div class="kontakt-forma">
+                <div class="kontakt-forma-content">
+                 <h1 class="naslov">Kontaktirajte nas</h1>
+                    <div id="form-message-warning" class="naslov">Doslo je do greske</div> 
+				    <div id="form-message-success" class="naslov">
+				    Poruka je poslata, hvala Vam!
+				    </div>
+                    <form class="contactForm" method="post" action="/kontakt">
+                    <div class="input-group-kontakt">
+                        <div class="col-md-6">
+                        <div class="form-group"> 
+                            <label class="label" for="ime">Ime</label>
+                            <input type="text" class="form-control" name="name" id="ime" placeholder="Ime" aria-invalid="true" required>
+                            <span class="focus-border"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="label" for="email">Email adresa</label>
+                            <input type="text" class="form-control" name="name" id="email" placeholder="Email" aria-invalid="true" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="label" for="tema">Naslov</label>
+                            <input type="text" class="form-control" name="name" id="naslov" placeholder="Naslov" aria-invalid="true" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="label" for="">Poruka</label>
+                            <textarea name="message" class="form-control" id="poruka" rows="4" cols="50" placeholder="Tekst poruke..." required></textarea>
+                            </div>
+                        </div>
+                             <div class="posalji-dugme">
+                        <div class="form-group">
+                            <input type="submit" value="Posalji poruku" class="kontakt-btn">
+                            </div>
+                        </div>
+                        </div>
+                    </form>
+                </div>
+                </div>
+                <div class="slika-form">
+                <div class="slika-form-img"></div>
+                </div>
+            </div>
+        </div>
+     </div>
+    </section>
+     <footer class="footer">
+    <div class="container">
+       <div class="footer-content">
+           <div class="footer-content-brand">
+            <a href=""><img src="images/band.png" class="logo"></a>
+           <div class="paragraph">
+            Na našem sajtu vam je omogućen pristup najvećoj bazi muzičara i muzičkih bendova. U bazi se nalazi veliki broj različitih izvođača, za svaku vrstu proslave i svačiji ukus. Jednostavnom pretragom muzičara po različitim kriterijumima zadajte idealne parametre za slavlje koje će se pamtiti.
+            </div>
+           </div>
+           <div class="social-media-wrap">
+           <h4 class="footer-heading">Zapratite nas</h4>
+               <div class="social-media">
+               <a href="#" class="sm-link"><i class="fab fa-facebook-square"></i></a>
+                <a href="#" class="sm-link"><i class="fab fa-instagram"></i></a>
+                   <a href="#" class="sm-link"><i class="fab fa-youtube"></i></a>
+                   <a href="#" class="sm-link"><i class="fab fa-twitter"></i></a>
+               </div>
+           </div>
+        </div>
+       </div>
+    </footer>
+    <script src="/javascript/main1.js"></script>
+    </body>
+</html>

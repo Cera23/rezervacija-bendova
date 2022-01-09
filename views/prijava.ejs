@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/3705fa8c3f.js" crossorigin="anonymous"></script>
+ 
+    <title><%= title %></title>
+</head>
+<body>
+    <header class="header">
+        <div class="conatiner">
+            <nav class="nav"> 
+            <a  href="/" class="logo">
+                <img src="images/band.png">
+            </a>
+            <div class="nav-menu">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                <a href="/" class="nav-link">Početna</a>
+                </li>
+                <li class="nav-item">
+                <a href="/pretraga" class="nav-link">Bendovi</a>
+                </li>
+                <li class="nav-item">
+                <a href="/prijava" class="nav-link">Prijava</a>
+                </li>
+                <li class="nav-item">
+                <a href="/kontakt" class="nav-link">Kontakt</a>
+                </li>
+             </ul>
+            </nav>  
+        </div>
+    </header>
+    <div class="registration-container">
+    <div class="registration-container-content">
+        <h1>Prijava</h1>
+        <form action="/prijava" method="post" enctype="multipart/form-data">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Naziv benda</span>
+                    <input type="text" name="naziv" placeholder="Naziv" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Mesto</span>
+                    <input type="text" name="mesto" placeholder="Mesto" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Telefon</span>
+                    <input type="text" name="telefon" placeholder="Telefon" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="text" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Cena</span>
+                    <input type="text" name="cena" placeholder="Cena" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Opis</span>
+                    <textarea rows="5" cols="38" name="opis" placeholder="Opis...."></textarea>
+                </div>
+                 
+            </div>
+            <div class="df">
+            <div class="Music-category">
+                <p>Vrsta muzike</p>
+                <div class="mb-10px">
+                <input type="checkbox" id="Narodna" name="vrsta_muzike" value="Narodna"><label>Narodna</label><br>
+                <input type="checkbox" id="Zabavna" name="vrsta_muzike" value="Zabavna"><label>Zabavna</label><br>
+                <input type="checkbox" id="Pop" name="vrsta_muzike" value="Pop"><label>Pop</label><br>
+                <input type="checkbox" id="Rok" name="vrsta_muzike" value="Rok"><label>Rok</label><br>
+                </div>
+            </div>
+            <div class="Music-category">
+                <p>Tip proslave</p>
+                <div class="mb-10px">
+                <input type="checkbox" id="Svadba" name="tip_proslave" value="Svadba"><label >Svadba</label><br>
+                <input type="checkbox" id="Punoletstvo" name="tip_proslave" value="Punoletstvo"><label>Punoletstva</label><br>
+                <input type="checkbox" id="Krštenja" name="tip_proslave" value="Krštenja"><label>Krštenja</label><br>
+                <input type="checkbox" id="Kafana" name="tip_proslave" value="Kafana"><label>Kafana</label><br>
+                <input type="checkbox" id="Klub" name="tip_proslave" value="Klub"><label>Klub</label><br>
+                </div>
+            </div>
+            <div class="Music-category">
+                <p>Tip grupe</p>
+                <div class="mb-10px">
+                <input type="radio" value="Bend" name="grupa"><label>Bend</label><br>
+                <input type="radio" value="Orkestar" name="grupa"><label>Orkestar</label><br>
+                <input type="radio" value="One-man" name="grupa"><label>One man</label><br>
+                </div>
+            </div>
+         </div>            
+            <div class="df-ns">
+                <div>
+                <h3>Profilna slika</h3>
+                <input type="file" accept="image/*" id="inpFile" name="inpFile" required>
+                <div class="image-preview" id="imagePreview">
+                    <img src="" alt="ImagePreview" class="image-preview__image">
+                    <span class="image-preview-text">Image Preview</span>
+                </div>
+            </div>
+            <div>
+                <div class="">
+                <h3>Video</h3>
+                <input type="file" accept="video/*" id="VideoFile" name="vFile" required>
+            </div>
+            </div>
+            <div>
+                <div class="reservation-button">
+                <input type="submit" value="Prijava">
+            </div>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/javascript/main.js"></script>
+</body>
+</html>

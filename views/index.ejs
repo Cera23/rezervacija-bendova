@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script src="https://kit.fontawesome.com/3705fa8c3f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <header class="header">
+        <div class="conatiner">
+            <nav class="nav"> 
+            <a  href="/" class="logo">
+                <img src="images/band.png">
+            </a>
+            <div class="nav-menu">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                <a href="/" class="nav-link">Početna</a>
+                </li>
+                <li class="nav-item">
+                <a href="/pretraga" class="nav-link">Bendovi</a>
+                </li>
+                <li class="nav-item">
+                <a href="/prijava" class="nav-link">Prijava</a>
+                </li>
+                <li class="nav-item">
+                <a href="/kontakt" class="nav-link">Kontakt</a>
+                </li>
+             </ul>
+            </nav>  
+        </div>
+    </header>
+    <main>
+        <div class="hero">
+            <div class="container">    
+                <div class="main-heading">
+                    <h1 class="title">Pretražite</h1>
+                    <h2 class="subtitle">
+                    Poznate bendove
+                    </h2>
+                </div>
+                <a class="button-pretrazi" onclick="scrollWin(0, 650)">Pretraga&nbsp;
+                <span class="lupa"><i class="fas fa-search"></i></span>
+                </a>
+            </div>
+        </div>
+    </main>
+    <section class="Pretraga" id="">
+    <div class="conatiner">
+        <form action="/pretraga/bend" method="get" class="form">
+            <div class="input-group">
+                <label for="Vrsta muzike" class="input-label"><i class="fas fa-music"></i>&nbsp;Vrsta muzike</label>
+                <select name="Vrsta" class="option" id="Vrsta_muzike" required>
+                    <option selected disabled>-Vrsta muzike-</option>
+                    <option value="Narodna">Narodna</option>
+                    <option value="Zabavna">Zabavna</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Rok">Rok</option>
+                </select>
+                </div>
+                 <div class="input-group">
+                <label for="Tip proslave" class="input-label"><i class="fas fa-glass-cheers"></i>&nbsp;Tip proslave</label>
+                <select name="Tip" id="Tip_proslave" class="option" required>
+                    <option selected disabled>-Tip proslave-</option>
+                    <option value="Svadba">Svadba</option>
+                    <option value="Punoletstvo">Punoletstvo</option>
+                    <option value="Krštenje">Krštenje</option>
+                    <option value="Kafana">Kafana</option>
+                    <option value="Klub">Klub</option>
+                    <option value="Koncert">Koncert</option>
+                </select>
+                </div>
+                <div class="input-group">
+                <label for="Tip grupe" class="input-label"><i class="fas fa-users"></i>&nbsp;Tip grupe</label>
+                <select name="Grupa" class="option" id="Tip_grupe" required>
+                    <option selected disabled>-Tip grupe-</option>
+                    <option value="Bend">Bend</option>
+                    <option value="Orkestar">Orkestar</option>
+                    <option value="One man">One man</option>
+                </select>
+                </div>
+                <div class="input-group">
+                <label for="Datum proslave" class="input-label"><i class="fas fa-calendar" id="cal"></i>&nbsp;Datum proslave</label>
+                <input type="date" name="datum" class="input" id="datum_proslave" required>
+                </div>
+                <div class="input-group">
+                <label for="Cena" class="input-label"><i class="fas fa-money-bill-wave" id="money"></i>&nbsp;Cena</label> 
+                <div class="sliderValue" style="display: flex;
+                justify-content: center;"> <span style="margin-top: -1rem;
+                    margin-bottom: -0.5rem;" id="slider-value">100</span></div>
+                <input type="range" name="cena" class="input" id="Cena" min="1" max="5000">
+                </div>
+                <button type="submit" class="button-pretrazi1">Pretraga</button>
+            </form>
+        </div>
+    </section>
+    <section class="bendovi">
+    <div class="container">
+        <h5 class="section-head">
+        <span class="heading">Naša preporuka</span>
+            <span class="sub-heading"></span>
+        </h5>
+        <div class="grid">
+            <div class="grid-item">
+            <img src="images/sofronijevic.jpg" class="band-image">
+                <h5 class="band-name">Orkestar Aleksandra Sofronijevića</h5>
+           
+                <div class="band-rating">
+                <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star-half rating"></i>
+                </div>
+                <a href="/profil/3" class="button-pretrazi">Detaljnije&nbsp;
+                <span class="lupa"><i class="fas fa-info-circle"></i></span>
+                </a>
+            </div>
+            <div class="grid-item">
+            <img src="images/amadeus.jfif" class="band-image">
+                <h5 class="band-name">Amadeus bend</h5>
+                <div class="band-rating">
+                <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star-half rating"></i>
+                </div>
+                <a href="/profil/15" class="button-pretrazi">Detaljnije&nbsp;
+                <span class="lupa"><i class="fas fa-info-circle"></i></span>
+                </a>
+            </div>
+            <div class="grid-item">
+            <img src="images/RibljcaCorba.jfif" class="band-image">
+                <h5 class="band-name">Riblja Čorba</h5>
+                <div class="band-rating">
+                <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star-half rating"></i>
+                </div>
+                <a href="/profil/13" class="button-pretrazi">Detaljnije&nbsp;
+                <span class="lupa"><i class="fas fa-info-circle"></i></span>
+                </a>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="Prijava-Bendova">
+    <div class="container">
+        <h5 class="section-head">
+        <span class="heading">Imaš bend?</span>
+            <span class="sub-heading">Prijavite se</span>
+        </h5>
+        <div class="Prijava-bendova-content">
+            <div class="paragraph">
+            Pored rezervacije bendova, sajt omogućava muzičkom sastavu da oglasi svoje usluge. Omogućiće vam da se što kvalitetnije i sveobuhvatnije prezentujete svojim klijentima, te komercijalizujete svoj angažman. 
+            </div>
+        </div>
+        <div class="Prijava">
+            <div class="button-prijava">
+            <a href="/prijava" class="">
+                <button>Prijava</button>
+                </a>
+            </div>
+        </div>
+        </div>
+    </section>
+   <footer class="footer">
+    <div class="container">
+       <div class="footer-content">
+           <div class="footer-content-brand">
+            <a href=""><img src="images/band.png" class="logo"></a>
+           <div class="paragraph">
+            Na našem sajtu vam je omogućen pristup najvećoj bazi muzičara i muzičkih bendova. U bazi se nalazi veliki broj različitih izvođača, za svaku vrstu proslave i svačiji ukus. Jednostavnom pretragom muzičara po različitim kriterijumima zadajte idealne parametre za slavlje koje će se pamtiti.
+            </div>
+           </div>
+           <div class="social-media-wrap">
+           <h4 class="footer-heading">Zapratite nas</h4>
+               <div class="social-media">
+               <a href="#" class="sm-link"><i class="fab fa-facebook-square"></i></a>
+                <a href="#" class="sm-link"><i class="fab fa-instagram"></i></a>
+                   <a href="#" class="sm-link"><i class="fab fa-youtube"></i></a>
+                   <a href="#" class="sm-link"><i class="fab fa-twitter"></i></a>
+               </div>
+           </div>
+        </div>
+       </div>
+    </footer>
+<script src="javascript/main1.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script src="https://kit.fontawesome.com/3705fa8c3f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <title>Bendovi</title>
+</head>
+<body>
+    <header class="header">
+        <div class="conatiner">
+            <nav class="nav"> 
+            <a  href="/" class="logo">
+                <img src="/images/band.png">
+            </a>
+            <div class="nav-menu">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                <a href="/" class="nav-link">Početna</a>
+                </li>
+                <li class="nav-item">
+                <a href="/pretraga" class="nav-link">Bendovi</a>
+                </li>
+                <li class="nav-item">
+                <a href="/prijava" class="nav-link">Prijava</a>
+                </li>
+                <li class="nav-item">
+                <a href="/kontakt" class="nav-link">Kontakt</a>
+                </li>
+             </ul>
+            </nav>  
+        </div>
+    </header>
+    <section class="bands">
+        <div class="container">
+            <h5 class="section-head">
+            <span class="heading">Bendovi</span>
+            <span class="sub-heading">i pretraga</span>
+            </h5>
+        </div>
+        <section class="Pretraga1">
+    <div class="conatiner">
+        <form action="/pretraga/bend" method="get" class="form">
+        <div class="input-group">
+            <label for="Vrsta muzike" class="input-label"><i class="fas fa-music"></i>&nbsp;Vrsta muzike</label>
+            <select name="Vrsta" class="option" id="Vrsta_muzike" required>
+                <option selected disabled>-Vrsta muzike-</option>
+                <option value="Narodna">Narodna</option>
+                <option value="Zabavna">Zabavna</option>
+                <option value="Pop">Pop</option>
+                <option value="Rok">Rok</option>
+            </select>
+            </div>
+             <div class="input-group">
+            <label for="Tip proslave" class="input-label"><i class="fas fa-glass-cheers"></i>&nbsp;Tip proslave</label>
+            <select name="Tip" id="Tip_proslave" class="option" required>
+                <option selected disabled>-Tip proslave-</option>
+                <option value="Svadba">Svadba</option>
+                <option value="Punoletstvo">Punoletstvo</option>
+                <option value="Krštenje">Krštenje</option>
+                <option value="Kafana">Kafana</option>
+                <option value="Klub">Klub</option>
+                <option value="Koncert">Koncert</option>
+            </select>
+            </div>
+            <div class="input-group">
+            <label for="Tip grupe" class="input-label"><i class="fas fa-users"></i>&nbsp;Tip grupe</label>
+            <select name="Grupa" class="option" id="Tip_grupe" required>
+                <option selected disabled>-Tip grupe-</option>
+                <option value="Bend">Bend</option>
+                <option value="Orkestar">Orkestar</option>
+                <option value="One man">One man</option>
+            </select>
+            </div>
+            <div class="input-group">
+            <label for="Datum proslave" class="input-label"><i class="fas fa-calendar" id="cal"></i>&nbsp;Datum proslave</label>
+            <input type="date" name="datum" class="input" id="datum_proslave" required>
+            </div>
+            <div class="input-group">
+            <label for="Cena" class="input-label"><i class="fas fa-money-bill-wave" id="money"></i>&nbsp;Cena</label> 
+            <div class="sliderValue" style="display: flex;
+            justify-content: center;"> <span style="margin-top: -1rem;
+                margin-bottom: -0.5rem;" id="slider-value">100</span></div>
+            <input type="range" name="cena" class="input" id="Cena" min="1" max="5000">
+            </div>
+            <button type="submit" class="button-pretrazi1">Pretraga</button>
+        </form>
+        </div>
+    </section>
+    </section>
+    <section class="bendovi">
+        <% pretraga_bendova.forEach(function (bend) { %>                                
+        <div class="row">
+            <div class="image-container">
+            <div class="small-image">
+                <img src="/images/piano.jpg" class="izabrana-slika">
+                <img src="/images/piano.jpg" class="izabrana-slika">
+                <video width="100%" controls id="video-hide" preload="metadata" style="border: 0.1rem solid rgb(0,0,0,3); cursor: pointer;" class="izabrana-slika">
+                    <source src="/uploads/video/<%= bend.video %>#t=1.0" type="video/mp4" >
+                  </video>
+                </div>
+                <div class="big-image">
+                <img src="/uploads/images/<%= bend.slika %>" class="big-picture" id="current">
+                </div>
+            </div>
+            <div class="bendovi-content">
+            <h3><%= bend.naziv %></h3>
+                <div class="stars">
+                    <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star rating"></i>
+                </div>
+                <p class="sub-heading"> <%= bend.opis %></p>
+    
+                <p class="sub-heading">Vrsta muzike: <%= bend.vrsta_muzike.replace(/]|[[]|"/g, '',) %></p>
+                <p class="sub-heading">Tip proslave: <%= bend.tip_proslave.replace(/]|[[]|"/g, '',) %></p>
+
+                <div class="cena-benda">
+                    <span class="band-cost">Cena: <%= bend.cena %><i class="fas fa-euro-sign"></i></span>
+                </div>
+                <a href="/profil/<%=bend.id%>" class="dugme">Detaljnije</a>
+            </div>
+            </div>
+            <% }) %>
+    </section>
+    <script src="/javascript/main1.js"></script>
+    </body>
+</html>
